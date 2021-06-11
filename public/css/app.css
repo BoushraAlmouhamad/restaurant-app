@@ -5,8 +5,14 @@ html,body{
    font-family: serif;
    margin:0;
    padding:0;
-    /* background-color: black; */
+    background-color: rgb(240, 90, 21);
+
 }
+.mt-4{
+    padding:30px;
+    transform: translateX(500px);
+}
+
 .carousel{
 width:100%;
 /* margin-bottom: 20px; */
@@ -17,7 +23,7 @@ width:100%;
 
 }
 .form-button{
-background-color:#eb640a ;
+background-color:#eb0aba ;
 color: black;
 margin-bottom: 20px;
 width: 100px;

@@ -1,56 +1,86 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>complete responsive food website design tutorial </title>
 
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/pages/B1.css">
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+</head>
+<body>
 
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
+ <div class="overlay">
+            <!-- LOGN IN FORM by Omar Dsoky -->
+            <form action="{{route('login')}}" method='POST'>
+               @csrf
+               <!--   con = Container  for items in the form-->
+               <div class="con">
+               <!--     Start  header Content  -->
+               <header class="head-form" >
+                  <h2>Log In</h2>
+                  <!--     A welcome message or an explanation of the login form -->
+                  <p>login here using your username and password</p>
+               </header>
+               <!--     End  header Content  -->
+               <br>
+               <div class="field-set">
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                  <!--   user name -->
+                     <span class="input-item">
+                       <i class="fa fa-user-circle"></i>
+                     </span>
+                    <!--   user name Input-->
+
+                     <input class="form-input" id="txt-input" type="text" placeholder="@UserName"  required>
+
+                  <br>
+
+                       <!--   Password -->
+
+                  <span class="input-item">
+                    <i class="fa fa-key"></i>
+                   </span>
+                  <!--   Password Input-->
+                  <input class="form-input" type="password" placeholder="Password" id="pwd"  name="password" required>
+
+            <!--      Show/hide password  -->
+                 <span>
+                    <i class="fa fa-eye" aria-hidden="true"  type="button" id="eye"></i>
+                 </span>
+
+
+                  <br>
+            <!--        buttons -->
+            <!--      button LogIn -->
+
+            <input type='submit'    />
+                  {{-- <a class="btn-rounded" role="button"> Log In </a> --}}
+               </div>
+
+            <!--   other buttons -->
+               <div class="other">
+            <!--      Forgot Password button-->
+                  <button class="btn submits frgt-pass">Forgot Password</button>
+            <!--     Sign Up button -->
+            <a href="register" class="btn btn-danger" role="button" data-mdb-toggle="button">Register Now</a>
+
+            <!--         Sign Up font icon -->
+                  <i class="fa fa-user-plus" aria-hidden="true"></i>
+</a>
+            <!--      End Other the Division -->
+               </div>
+
+            <!--   End Conrainer  -->
+              </div>
+
+              <!-- End Form -->
+            </form>
+
             </div>
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
-            </div>
-
-            <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+</body>

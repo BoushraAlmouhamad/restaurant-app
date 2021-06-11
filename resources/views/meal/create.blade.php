@@ -1,10 +1,11 @@
-<x-layouts.app>
+
+
   <section class="section">
-  <div class="container">
-      <div class="title is-2 form">Create Meal</div>
-      <form action="{{ route('meals.store') }} " method="POST" enctype="multipart/form-data">
+  <div class="container"   >
+      <div class="title is-2 form" style=" transform: translateX(200px);">Create Meal</div>
+      <form action="{{ route('meals.store') }} " method="POST" enctype="multipart/form-data" style="transform: translateX(100px);">
        @csrf
-       <div class="field">
+       <div class="field"  style=" transform: translateX(100px);">
           <label class="label form"> Meal Name</label>
           <div class="control">
             <input class="input @error('name')is-danger @enderror is-normal" name="name" type="text" value="{{ old('name') }}" placeholder="Enter Meal Name">
@@ -13,7 +14,7 @@
             <p class="help is-danger">{{ $message }}</p>
           @enderror
         </div>
-        <div class="field">
+        <div class="field"  style=" transform: translateX(100px);">
           <label class="label form"> Meal Price</label>
           <div class="control">
             <input class="input @error('price')is-danger @enderror is-normal" name="price" type="text" value="{{ old('price') }}" placeholder="Enter Meal price">
@@ -22,7 +23,7 @@
             <p class="help is-danger">{{ $message }}</p>
           @enderror
         </div>
-        <div class="field">
+        <div class="field"  style=" transform: translateX(100px);">
           <label class="label form"> Calory</label>
           <div class="control">
             <input class="input @error('calory')is-danger @enderror is-normal" name="calory" type="text" value="{{ old('calory') }}" placeholder="Enter Calory">
@@ -31,7 +32,7 @@
             <p class="help is-danger">{{ $message }}</p>
           @enderror
         </div>
-        <div class="field">
+        <div class="field"  style=" transform: translateX(100px);">
           <label class="label form">Category</label>
           <div class="control" id="category">
             <div class="select @error('category_id')is-danger @enderror">
@@ -46,7 +47,7 @@
             <p class="help is-danger">{{ $message }}</p>
           @enderror
         </div>
-        <div class="field">
+        <div class="field"  style=" transform: translateX(100px);">
           <label class="label form">Components</label>
           <div class="control" id="component">
             <div class="select is-multiple @error('components')is-danger @enderror">
@@ -61,7 +62,7 @@
             <p class="help is-danger">{{ $message }}</p>
           @enderror
         </div>
-        <div class="field">
+        <div class="field"  style=" transform: translateX(100px);">
           <label class="label form"> Image</label>
           <div class="file">
             <label class="file-label">
@@ -80,7 +81,8 @@
           <p class="help is-danger">{{ $message }}</p>
           @enderror
         </div>
-        <div class="field is-grouped">
+        <div class="field" style=" transform: translateX(100px);">
+        <div class="field"  >
           <div class="control">
             <button class=" is-link form-button">Create</button>
           </div>
@@ -93,4 +95,3 @@
 
 
   </section>
-  </x-layouts.app>

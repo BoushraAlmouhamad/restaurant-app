@@ -1,4 +1,5 @@
 <x-layouts.app>
+  <link rel="stylesheets" href="css/app.css">
   <section class="section">
   <div class="container">
       <div class="title is-2 form">Edit Meal</div>

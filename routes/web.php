@@ -8,6 +8,8 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ComponentController;
 use App\Http\Controllers\RestaurantController;
 
+use Illuminate\Support\Facades\Auth ;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,13 +20,16 @@ use App\Http\Controllers\RestaurantController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/* Route::view('/boushra','welcome'); */
 Route::get('/', [PageController::class, 'home'])->name('home');
 Route::resource('restaurants', RestaurantController::class);
-Route::resource('categories', CategoryController::class);
+Route::resource('categories', CategoryController::class);`
 Route::resource('meals', MealController::class);
 Route::resource('components',ComponentController::class);
-
+ Route::get('log_out', function () {
+ Auth::logout()
+ return redirect('/');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

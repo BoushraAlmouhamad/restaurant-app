@@ -1,4 +1,4 @@
-<x-layouts.app>
+
 <section class="section">
 <div class="container">
     <div class="title is-2 form">Create Category</div>
@@ -61,4 +61,4 @@
 
 
 </section>
-</x-layouts.app>
+
